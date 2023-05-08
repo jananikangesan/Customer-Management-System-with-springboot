@@ -36,7 +36,7 @@ public class CustomerService {
          customerList
                 .stream()
                 .forEach(c -> {
-                    if(c.getCustomerId()==customerId){
+                    if(c.getCustomerId() ==  customerId){
                         c.setCustomerFirstName(customer.getCustomerFirstName());
                         c.setCustomerLastName(customer.getCustomerLastName());
                         c.setCustomerEmail(customer.getCustomerEmail());
@@ -44,7 +44,7 @@ public class CustomerService {
                 });
         return customerList
                 .stream()
-                .filter(c -> c.getCustomerId()== customerId)
+                .filter(c -> c.getCustomerId() == customerId)
                 .findFirst()
                 .get();
     }
@@ -52,7 +52,7 @@ public class CustomerService {
         customerList
                 .stream()
                 .forEach(c->{
-                    if(c.getCustomerId()==customerId ){
+                    if(c.getCustomerId() == customerId ){
                         customerList.remove(c);
                     }
                 });

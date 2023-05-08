@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,6 +35,11 @@ public class CustomerResource {
     @GetMapping(value="/{customerId}")
     public Customer getCustomer(@PathVariable("customerId") int customerId){
         return customerService.getCustomer(customerId);
+    }
+
+    @PutMapping(value="/{customerId}")
+    public Customer updateCustomer(@PathVariable ("CustomerId") int customerId , @RequestBody Customer customer){
+        return customerService.updateCustomer(customerId,customer);
     }
 
 }
