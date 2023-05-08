@@ -3,6 +3,7 @@ package com.Computer.cms.api;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,8 +39,13 @@ public class CustomerResource {
     }
 
     @PutMapping(value="/{customerId}")
-    public Customer updateCustomer(@PathVariable ("CustomerId") int customerId , @RequestBody Customer customer){
+    public Customer updateCustomer(@PathVariable("customerId") int customerId , @RequestBody Customer customer){
         return customerService.updateCustomer(customerId,customer);
+    }
+
+    @DeleteMapping(value="/{customerId}")
+    public void deleteCustomer(@PathVariable("customerId") int customerId){
+        customerService.deleteCustomer(customerId);
     }
 
 }

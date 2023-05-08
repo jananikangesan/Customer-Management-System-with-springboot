@@ -48,7 +48,7 @@ public class CustomerService {
                 .findFirst()
                 .get();
     }
-    public void deleteCustomerId(int customerId){
+    public void deleteCustomer(int customerId){
         customerList
                 .stream()
                 .forEach(c->{
