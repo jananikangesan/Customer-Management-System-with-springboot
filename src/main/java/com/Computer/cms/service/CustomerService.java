@@ -5,6 +5,10 @@ import com.Computer.cms.model.Customer;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+import org.springframework.stereotype.Component;
+
+
+@Component
 public class CustomerService {
     
     private int customerIdCount=1;
