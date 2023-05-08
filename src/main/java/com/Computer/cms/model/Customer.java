@@ -5,6 +5,8 @@ public class Customer {
     private int customerId;
     private String customerFirstName;
     private String customerLastName;
+    private String customerEmail;
+
 
     public int getCustomerId() {
         return customerId;
@@ -38,5 +40,5 @@ public class Customer {
         this.customerEmail = customerEmail;
     }
 
-    private String customerEmail;
+    
 }
