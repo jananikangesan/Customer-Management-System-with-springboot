@@ -29,15 +29,20 @@ public class CustomerService {
 
     public List<Customer> getCustomers() {
 
-        return customerDAO.findAll();
         //return customerList;
+        return customerDAO.findAll();
     }
+
     public Customer getCustomer(int customerId){
-       return customerList
+        
+        /*return customerList
                 .stream()
                 .filter(c -> c.getCustomerId() == customerId)
                 .findFirst()
-                .get();
+                .get();*/
+        
+        return customerDAO.findById(customerId).get();
+   
     }
 
     public Customer updateCustomer(int customerId,Customer customer){
@@ -57,13 +62,19 @@ public class CustomerService {
                 .get();
     }
     public void deleteCustomer(int customerId){
-        customerList
+        
+        /*customerList
                 .stream()
                 .forEach(c->{
                     if(c.getCustomerId() == customerId ){
                         customerList.remove(c);
                     }
-                });
+                });*/
+
+        customerDAO.deleteById(customerId);
+
+            
+
     }
 
 
