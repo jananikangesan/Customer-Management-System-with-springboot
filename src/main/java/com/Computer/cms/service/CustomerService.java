@@ -16,8 +16,8 @@ public class CustomerService {
     @Autowired
     private CustomerDAO customerDAO;
     
-    private int customerIdCount=1;
-    private List<Customer> customerList=new CopyOnWriteArrayList<>();
+    //private int customerIdCount=1;
+    //private List<Customer> customerList=new CopyOnWriteArrayList<>();
     
     public Customer addCustomer(Customer customer){
        /*  customer.setCustomerId(customerIdCount);
@@ -46,7 +46,7 @@ public class CustomerService {
     }
 
     public Customer updateCustomer(int customerId,Customer customer){
-         customerList
+         /*customerList
                 .stream()
                 .forEach(c -> {
                     if(c.getCustomerId() ==  customerId){
@@ -59,7 +59,9 @@ public class CustomerService {
                 .stream()
                 .filter(c -> c.getCustomerId() == customerId)
                 .findFirst()
-                .get();
+                .get();*/
+        customer.setCustomerId(customerId);
+        return customerDAO.save(customer);
     }
     public void deleteCustomer(int customerId){
         
