@@ -4,7 +4,7 @@ import com.Computer.cms.dao.CustomerDAO;
 import com.Computer.cms.model.Customer;
 
 import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
+//import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
