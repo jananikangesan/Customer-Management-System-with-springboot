@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Home {
     
-    @GetMapping
+    @GetMapping("/")
     public String home(){
         return "Application is works!!! "+new Date();
     }
